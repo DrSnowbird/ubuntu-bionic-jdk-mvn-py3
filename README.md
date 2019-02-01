@@ -1,14 +1,15 @@
-# Ubuntu LTS (bionic) 18.04 + Java 8 (1.8.0_181) JDK + Maven 3.5 + Python 2.7.12/3.5.2 + PIP3 8.1.1
+# Ubuntu 18.04.1 LTS (Bionic Beaver) + Java 8 (1.8.0_201) + Maven 3.6 + Python 2.7/3.6 + PIP3 19 + Node 11 + NPM 6
 
 [![](https://images.microbadger.com/badges/image/openkbs/ubuntu-bionic-ubuntu-bionic-jdk-mvn-py3.svg)](https://microbadger.com/images/openkbs/ubuntu-bionic-ubuntu-bionic-jdk-mvn-py3 "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/openkbs/ubuntu-bionic-ubuntu-bionic-jdk-mvn-py3.svg)](https://microbadger.com/images/openkbs/ubuntu-bionic-ubuntu-bionic-jdk-mvn-py3 "Get your own version badge on microbadger.com")
 
 # Components:
 * Ubuntu LTS 18.04, bionic-20180724.1, bionic, latest
-* java version "1.8.0_181"
-  Java(TM) SE Runtime Environment (build 1.8.0_181-b13)
-  Java HotSpot(TM) 64-Bit Server VM (build 25.181-b13, mixed mode)
-* Apache Maven 3.5.3
-* Python 3.5.2
+* java version "1.8.0_201"
+  Java(TM) SE Runtime Environment (build 1.8.0_201-b09)
+  Java HotSpot(TM) 64-Bit Server VM (build 25.201-b09, mixed mode)
+* Apache Maven 3.6
+* Python 3.6
+* Node 11 + NPM 6
 * Other tools: git wget unzip vim python python-setuptools python-dev python-numpy 
 
 ## Pull the image from Docker Repository
@@ -136,28 +137,62 @@ For example, try the following Docker-based IDEs:
 
 # Versions
 ```
-Linux f1c21daeac32 4.15.0-29-generic #31~16.04.1-Ubuntu SMP Wed Jul 18 08:54:04 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
-No LSB modules are available.
-Distributor ID:	Ubuntu
-Description:	Ubuntu 18.04.1 LTS
-Release:	18.04
-Codename:	bionic
-
-JAVA_HOME=/usr/jdk1.8.0_181
-java version "1.8.0_181"
-Java(TM) SE Runtime Environment (build 1.8.0_181-b13)
-Java HotSpot(TM) 64-Bit Server VM (build 25.181-b13, mixed mode)
-
-Apache Maven 3.5.3 (3383c37e1f9e9b3bc3df5050c29c8aff9f295297; 2018-02-24T19:49:05Z)
-Maven home: /usr/apache-maven-3.5.3
-Java version: 1.8.0_181, vendor: Oracle Corporation
-Java home: /usr/jdk1.8.0_181/jre
+root@2279085c3b8d:/data# /usr/printVersions.sh 
++ echo JAVA_HOME=/usr/java
+JAVA_HOME=/usr/java
++ java -version
+java version "1.8.0_201"
+Java(TM) SE Runtime Environment (build 1.8.0_201-b09)
+Java HotSpot(TM) 64-Bit Server VM (build 25.201-b09, mixed mode)
++ mvn --version
+Apache Maven 3.6.0 (97c98ec64a1fdfee7767ce5ffb20918da4f719f3; 2018-10-24T18:41:47Z)
+Maven home: /usr/apache-maven-3.6.0
+Java version: 1.8.0_201, vendor: Oracle Corporation, runtime: /usr/jdk1.8.0_201/jre
 Default locale: en_US, platform encoding: ANSI_X3.4-1968
-OS name: "linux", version: "4.15.0-29-generic", arch: "amd64", family: "unix"
-
+OS name: "linux", version: "4.15.0-43-generic", arch: "amd64", family: "unix"
++ python -V
 Python 2.7.15rc1
++ python3 -V
+Python 3.6.7
++ pip --version
+pip 19.0.1 from /usr/local/lib/python3.6/dist-packages/pip (python 3.6)
++ pip3 --version
+pip 19.0.1 from /usr/local/lib/python3.6/dist-packages/pip (python 3.6)
++ gradle --version
 
-Python 3.6.5
+------------------------------------------------------------
+Gradle 5.1.1
+------------------------------------------------------------
 
-pip 9.0.1 from /usr/lib/python3/dist-packages (python 3.6)
+Build time:   2019-01-10 23:05:02 UTC
+Revision:     3c9abb645fb83932c44e8610642393ad62116807
+
+Kotlin DSL:   1.1.1
+Kotlin:       1.3.11
+Groovy:       2.5.4
+Ant:          Apache Ant(TM) version 1.9.13 compiled on July 10 2018
+JVM:          1.8.0_201 (Oracle Corporation 25.201-b09)
+OS:           Linux 4.15.0-43-generic amd64
+
++ npm -v
+6.5.0
++ node -v
+v11.9.0
++ cat /etc/lsb-release /etc/os-release
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=18.04
+DISTRIB_CODENAME=bionic
+DISTRIB_DESCRIPTION="Ubuntu 18.04.1 LTS"
+NAME="Ubuntu"
+VERSION="18.04.1 LTS (Bionic Beaver)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 18.04.1 LTS"
+VERSION_ID="18.04"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=bionic
+UBUNTU_CODENAME=bionic
 ```
